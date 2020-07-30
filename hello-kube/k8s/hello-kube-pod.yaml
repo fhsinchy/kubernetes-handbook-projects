@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-kube-pod
+  labels:
+    component: web
+spec:
+  containers:
+    - name: hello-kube
+      image: fhsinchy/hello-kube
+      ports:
+        - containerPort: 80
