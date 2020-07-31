@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-kube-node-port
+  name: hello-kube-load-balancer
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 80
-      nodePort: 31515
   selector:
     component: web
