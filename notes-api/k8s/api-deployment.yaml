@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: api
+  template:
+    metadata:
+      labels:
+        component: api
+    spec:
+      containers:
+        - name: api
+          image: fhsinchy/notes-api
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DB_CONNECTION
+              value: pg
+            - name: DB_HOST
+              value: postgres-cluster-ip-service
+            - name: DB_PORT
+              value: '5432'
+            - name: DB_USER
+              value: postgres
+            - name: DB_DATABASE
+              value: notesdb
+            - name: DB_PASSWORD
+              value: 63eaQB9wtLqmNBpg
