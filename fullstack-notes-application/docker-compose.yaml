@@ -1,0 +1,38 @@
+version: "3.8"
+
+services: 
+    db:
+        build:
+            context: ./postgres
+            dockerfile: Dockerfile.dev
+        environment:
+            POSTGRES_PASSWORD: 63eaQB9wtLqmNBpg
+            POSTGRES_DB: notesdb
+    nginx:
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile.dev
+        ports: 
+            - 80:80
+        restart: always
+    api:
+        build: 
+            context: ./api
+            dockerfile: Dockerfile.dev
+        volumes: 
+            - /usr/app/node_modules
+            - ./api:/usr/app
+        environment: 
+            DB_CONNECTION: pg
+            DB_HOST: db
+            DB_PORT: 5432
+            DB_USER: postgres
+            DB_DATABASE: notesdb
+            DB_PASSWORD: 63eaQB9wtLqmNBpg
+    client:
+        build:
+            context: ./client
+            dockerfile: Dockerfile.dev
+        volumes: 
+            - /usr/app/node_modules
+            - ./client:/usr/app
