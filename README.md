@@ -4,7 +4,7 @@
 
 | :bell: NOTIFICATION |
 |:--------------------|
-| This branch contains the incomplete versions of the projects. If you want the complete ones, please check the [k8s](https://github.com/fhsinchy/kubernetes-handbook-projects/tree/k8s/) branch. |
+| This branch contains the complete versions of the projects. If you want the incomplete ones, please check the [k8s](https://github.com/fhsinchy/kubernetes-handbook-projects/tree/master/) branch. |
 
 This repository holds the code for my Kubernetes Handbook article on [__freeCodecamp__](https://freecodecamp.org). In the article the readers work through __three__ projects with increasing complexity. These projects are as follows:
 
