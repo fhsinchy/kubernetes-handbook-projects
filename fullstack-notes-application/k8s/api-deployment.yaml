@@ -17,13 +17,17 @@ spec:
           image: fhsinchy/notes-api
           ports:
             - containerPort: 3000
-          envFrom:
-            - configMapRef:
-                name: api-config-map
           env:
+            - name: DB_CONNECTION
+              value: pg
+            - name: DB_HOST
+              value: postgres-cluster-ip-service
+            - name: DB_PORT
+              value: '5432'
+            - name: DB_USER
+              value: postgres
+            - name: DB_DATABASE
+              value: notesdb
             - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: password
+              value: 63eaQB9wtLqmNBpg
           

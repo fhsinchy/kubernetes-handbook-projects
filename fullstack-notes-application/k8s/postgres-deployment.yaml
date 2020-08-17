@@ -27,9 +27,6 @@ spec:
               subPath: postgres
           env:
             - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-secret
-                  key: password
+              value: 63eaQB9wtLqmNBpg
             - name: POSTGRES_DB
               value: notesdb
