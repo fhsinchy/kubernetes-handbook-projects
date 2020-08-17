@@ -1,0 +1,10 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata:
+  name: api-config-map 
+data:
+  DB_CONNECTION: pg
+  DB_HOST: postgres-cluster-ip-service
+  DB_PORT: '5432'
+  DB_USER: postgres
+  DB_DATABASE: notesdb
