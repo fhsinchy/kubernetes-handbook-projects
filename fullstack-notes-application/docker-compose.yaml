@@ -5,6 +5,8 @@ services:
         build:
             context: ./postgres
             dockerfile: Dockerfile.dev
+        volumes: 
+            - db-data:/var/lib/postgresql/data
         environment:
             POSTGRES_PASSWORD: 63eaQB9wtLqmNBpg
             POSTGRES_DB: notesdb
@@ -20,8 +22,8 @@ services:
             context: ./api
             dockerfile: Dockerfile.dev
         volumes: 
-            - /usr/app/node_modules
-            - ./api:/usr/app
+            - /home/node/app/node_modules
+            - ./api:/home/node/app
         environment: 
             DB_CONNECTION: pg
             DB_HOST: db
@@ -34,5 +36,9 @@ services:
             context: ./client
             dockerfile: Dockerfile.dev
         volumes: 
-            - /usr/app/node_modules
-            - ./client:/usr/app
+            - /home/node/app/node_modules
+            - ./client:/home/node/app
+
+volumes:
+    db-data:
+        name: notes-db-dev-data
