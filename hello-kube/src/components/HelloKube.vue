@@ -1,6 +1,6 @@
 <template>
   <h1>{{ msg }}</h1>
-  <p>A folow-up to <a href="https://www.freecodecamp.org/news/the-docker-handbook/" target="_blank">The Docker Handbook</a></p>
+  <p>A follow-up to <a href="https://www.freecodecamp.org/news/the-docker-handbook/" target="_blank">The Docker Handbook</a></p>
   <hr>
   <p>
     <strong>Author:</strong> <a href="https://www.freecodecamp.org/news/author/farhanhasin/" target="_blank">Farhan Hasin Chowdhury</a>
